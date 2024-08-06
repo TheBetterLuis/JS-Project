@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+</head>
+
+<body class="bg-[#212121]">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <img id="loader" class="hidden w-32 shake-slow shake-constant"
+            src="https://img.icons8.com/?size=100&id=15854&format=png&color=6366f1" alt="loader">
+
+        <div id="box" style="box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);"
+            class="overflow-hidden bg-gray-800 rounded-lg shadow-xl">
+            <div class="p-8">
+                <h2 class="text-3xl font-extrabold text-center text-white">
+                    Welcome Back
+                </h2>
+                <p class="mt-4 text-center text-gray-400">Sign in to continue</p>
+                <form method="POST" action="#" class="mt-8 space-y-6" onsubmit="return false">
+                    <div class="rounded-md shadow-sm">
+                        <div>
+                            <label class="sr-only" for="email">Email address</label>
+                            <input placeholder="Email address"
+                                class="relative block w-full px-3 py-3 text-white bg-gray-700 border border-gray-700 rounded-md appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                required="" autocomplete="email" type="email" name="email" id="email" />
+                        </div>
+                        <div class="mt-4">
+                            <label class="sr-only" for="password">Password</label>
+                            <input placeholder="Password"
+                                class="relative block w-full px-3 py-3 text-white bg-gray-700 border border-gray-700 rounded-md appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                required="" autocomplete="current-password" type="password" name="password"
+                                id="password" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <button
+                            class="relative flex justify-center w-full px-4 py-3 text-sm font-medium text-gray-900 bg-indigo-500 border border-transparent rounded-md group hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            id="signIn">
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="px-8 py-4 text-center bg-gray-700">
+                <span class="text-gray-400">Don't have an account?</span>
+                <a class="font-medium text-indigo-500 hover:text-indigo-400" href="./register.html">Sign up</a>
+            </div>
+
+        </div>
+        <p id="message" class="hidden py-4 text-xl">Your message here</p>
+
+    </div>
+    
+</body>
+
+<script type="module" src="./js/login.js"></script>
+
+
+</html>

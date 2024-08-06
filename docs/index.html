@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="./index.css" type="text/css" media="all">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #374151;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-800">
+    <header class="flex items-center justify-between px-4 py-2 text-white bg-[#212121]">
+        <h1 class="text-xl font-bold">Your Favourite  Store</h1>
+        <nav class="hidden space-x-4 sm:flex">
+            <a href="#aboutPara"  class="hover:underline">About Us</a>
+            <a href="login.html" id="logIn" class="hover:underline">Login</a>
+            <a href="#" id="logOut" class="hover:underline hidden">Logout</a>
+        </nav>
+        <button
+            class="block p-2 rounded-full sm:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:bg-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zM12 8z" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="container px-4 py-8 mx-auto">
+<div id="options" class="hidden">
+<button id="viewCartBtn" class="view-cart-btn">
+<i class="text-white bi bi-cart"></i>
+</button>
+        <button id="logCart" class="text-white">View Cart</button>
+        <button id="eraseCart" class="text-white">Empty Cart</button>
+        <button id="purchaseBtn" class="text-white">Pay</button>
+
+</div>
+<br>
+        <h1 class="mb-4 text-3xl font-bold text-center text-white" id="welcome">Welcome,</h1>
+        <p class="text-lg text-center text-gray-200 text-white" id="message"></p>
+        <br>
+
+               <div id="productsBox" class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4"> 
+
+
+        
+            <div class="hidden pb-6 mb-8 overflow-hidden bg-white rounded-lg shadow-md product-card">
+           <img class="object-cover w-full h-auto" src="https://d3e54emdgoy1fq.cloudfront.net/uploads/new_category/image/17369/medium_2a95b-MX710de.jpg" alt="Product Image">
+   
+           <div class="flex flex-col justify-between p-4">
+             <div>
+               <h3 class="text-lg font-medium text-gray-900">Product Name</h3>
+       
+               <p class="mt-2 text-gray-700">Product Description</p>
+       
+               <div class="flex items-center mt-4">
+                 <span class="mr-2 text-gray-800 line-through">Original Price</span>
+                 <span class="font-bold text-red-500">Discounted Price</span>
+               </div>
+             </div>
+       
+             <div class="flex items-center justify-between mt-4">
+               <div class="flex items-center text-gray-700">
+                 <svg class="w-4 h-4 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8c0-1.1-.9-2-2-2s-2 .9-2 2z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                 <span class="">In Stock (Quantity)</span>
+               </div>
+       
+               <button class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Add to Cart</button>
+             </div>
+           </div>
+         </div>
+   
+       </div>
+
+    <div class="modal" id="cartModal">
+      <div class="modal-content">
+        <span class="close closeEMP">&times;</span>
+        <h2>Cart</h2>
+        <div id="modContent" >
+      <table>
+        <thead>
+        </thead>
+        <tbody id="table-products"></tbody>
+      </table>
+       <h1 id="total">Total:</h1>   
+          </div>
+        </div>
+
+      </div>      
+      
+    </div>
+    
+
+<footer class=" text-white py-8">
+  <div class="container mx-auto text-center">
+    <p class="text-lg" id="aboutPara">
+      Your Favourite Store is your one-stop shop for everything you need and want. We offer a diverse range of products, from electronics and home goods to fashion and accessories. Our goal is to provide our customers with high-quality items at competitive prices, while delivering exceptional customer service.
+    </p>
+  </div>
+</footer>
+
+    </main>
+
+    <script>
+        // Access user information from your login logic (if applicable)
+        const userName = localStorage.getItem('userName'); // Example using localStorage
+        if (userName) {
+            document.querySelector('h1').textContent = `Welcome, ${userName}!`;
+        }
+
+        const mobileMenuBtn = document.querySelector('header button');
+        const mobileMenu = document.querySelector('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+<script type="module" src="js/index.js"></script>
+</html>
